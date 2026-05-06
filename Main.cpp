@@ -9,9 +9,6 @@ using namespace System;
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
-    // Initialize data store
-    DataStore::Initialize();
-
     // Generate random data
     DataGenerator::GenerateStudents(20);
     DataGenerator::GenerateInventory();

@@ -12,17 +12,6 @@ public:
     String^ Allergies;
     String^ ParentName;
     String^ Contact;
-
-    Student() {
-        Id = 0;
-        Name = "";
-        Grade = "";
-        BloodType = "";
-        Conditions = "";
-        Allergies = "";
-        ParentName = "";
-        Contact = "";
-    }
 };
 
 public ref class Visit {
@@ -35,17 +24,6 @@ public:
     String^ Diagnosis;
     String^ Treatment;
     DateTime Time;
-
-    Visit() {
-        StudentRef = nullptr;
-        Temperature = 0.0;
-        BloodPressure = "";
-        Pulse = 0;
-        Symptoms = "";
-        Diagnosis = "";
-        Treatment = "";
-        Time = DateTime::Now;
-    }
 };
 
 public ref class QueueEntry {
@@ -55,14 +33,6 @@ public:
     DateTime ArrivalTime;
     String^ Status;
     String^ Priority;
-
-    QueueEntry() {
-        StudentRef = nullptr;
-        Complaint = "";
-        ArrivalTime = DateTime::Now;
-        Status = "Waiting";
-        Priority = "Normal";
-    }
 };
 
 public ref class InventoryItem {
@@ -72,14 +42,6 @@ public:
     int Quantity;
     int MinStock;
     DateTime Expiry;
-
-    InventoryItem() {
-        Name = "";
-        Category = "";
-        Quantity = 0;
-        MinStock = 5;
-        Expiry = DateTime::Now;
-    }
 };
 
 public ref class User {
@@ -87,10 +49,4 @@ public:
     String^ Username;
     String^ Password;
     String^ Role;
-
-    User() {
-        Username = "";
-        Password = "";
-        Role = "";
-    }
 };

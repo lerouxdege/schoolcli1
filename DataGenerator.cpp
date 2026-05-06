@@ -1,43 +1,35 @@
 #include "DataGenerator.h"
 
-array<String^>^ DataGenerator::FirstNames = gcnew array<String^>{ 
-    "John", "Emma", "Michael", "Sarah", "David", "Jessica", "James", "Lisa",
-    "Robert", "Maria", "William", "Anna", "Joseph", "Lauren", "Thomas", "Sophie"
-};
-
-array<String^>^ DataGenerator::LastNames = gcnew array<String^>{ 
-    "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis",
-    "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Taylor"
-};
-
-array<String^>^ DataGenerator::Grades = gcnew array<String^>{ 
-    "G1-A", "G1-B", "G2-A", "G2-B", "G3-A", "G3-B", "G4-A", "G4-B",
-    "G5-A", "G5-B", "G6-A", "G6-B"
-};
-
-array<String^>^ DataGenerator::BloodTypes = gcnew array<String^>{ 
-    "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"
-};
-
-array<String^>^ DataGenerator::Conditions = gcnew array<String^>{ 
-    "None", "Asthma", "Diabetes", "Allergy", "Hypertension", "Migraine"
-};
-
-array<String^>^ DataGenerator::Allergies = gcnew array<String^>{ 
-    "None", "Peanut", "Shellfish", "Dairy", "Wheat", "Soy", "Tree Nut"
-};
-
-array<String^>^ DataGenerator::Medicines = gcnew array<String^>{ 
-    "Paracetamol", "Ibuprofen", "Aspirin", "Amoxicillin", "Salbutamol", "Insulin"
-};
-
-array<String^>^ DataGenerator::InventoryCategories = gcnew array<String^>{ 
-    "Medicine", "Equipment", "Supplies", "Bandages", "Ointments"
-};
-
-Random^ DataGenerator::rnd = gcnew Random();
-
 void DataGenerator::GenerateStudents(int count) {
+    array<String^>^ FirstNames = gcnew array<String^>{ 
+        "John", "Emma", "Michael", "Sarah", "David", "Jessica", "James", "Lisa",
+        "Robert", "Maria", "William", "Anna", "Joseph", "Lauren", "Thomas", "Sophie"
+    };
+
+    array<String^>^ LastNames = gcnew array<String^>{ 
+        "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis",
+        "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Taylor"
+    };
+
+    array<String^>^ Grades = gcnew array<String^>{ 
+        "G1-A", "G1-B", "G2-A", "G2-B", "G3-A", "G3-B", "G4-A", "G4-B",
+        "G5-A", "G5-B", "G6-A", "G6-B"
+    };
+
+    array<String^>^ BloodTypes = gcnew array<String^>{ 
+        "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"
+    };
+
+    array<String^>^ Conditions = gcnew array<String^>{ 
+        "None", "Asthma", "Diabetes", "Allergy", "Hypertension", "Migraine"
+    };
+
+    array<String^>^ Allergies = gcnew array<String^>{ 
+        "None", "Peanut", "Shellfish", "Dairy", "Wheat", "Soy", "Tree Nut"
+    };
+
+    Random^ rnd = gcnew Random();
+
     for (int i = 0; i < count; i++) {
         Student^ student = gcnew Student();
         student->Id = i + 1;
@@ -62,6 +54,12 @@ void DataGenerator::GenerateInventory() {
         "Cotton Wool", "Syringes", "Ointment A", "Ointment B"
     };
 
+    array<String^>^ InventoryCategories = gcnew array<String^>{ 
+        "Medicine", "Equipment", "Supplies", "Bandages", "Ointments"
+    };
+
+    Random^ rnd = gcnew Random();
+
     for (int i = 0; i < items->Length; i++) {
         InventoryItem^ item = gcnew InventoryItem();
         item->Name = items[i];
@@ -75,6 +73,7 @@ void DataGenerator::GenerateInventory() {
 }
 
 void DataGenerator::GenerateQueue() {
+    Random^ rnd = gcnew Random();
     int queueSize = rnd->Next(3, 8);
     for (int i = 0; i < queueSize; i++) {
         if (DataStore::Students->Count > 0) {

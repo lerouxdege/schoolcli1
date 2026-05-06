@@ -10,15 +10,4 @@ public:
     static void GenerateInventory();
     static void GenerateQueue();
     static void GenerateUsers();
-
-private:
-    static array<String^>^ FirstNames;
-    static array<String^>^ LastNames;
-    static array<String^>^ Grades;
-    static array<String^>^ BloodTypes;
-    static array<String^>^ Conditions;
-    static array<String^>^ Allergies;
-    static array<String^>^ Medicines;
-    static array<String^>^ InventoryCategories;
-    static Random^ rnd;
 };
