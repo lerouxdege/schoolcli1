@@ -5,6 +5,8 @@
 #include "frmInventory.h"
 #include "frmReports.h"
 #include "frmUsers.h"
+#include "SessionManager.h"
+#include "DataStore.h"
 
 namespace SchoolClinic360 {
 
