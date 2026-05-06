@@ -1,5 +1,6 @@
 #pragma once
 #include "frmMain.h"
+#include "SessionManager.h"
 
 namespace SchoolClinic360 {
 
